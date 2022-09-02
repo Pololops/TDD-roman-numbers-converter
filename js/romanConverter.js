@@ -1,55 +1,65 @@
-function romanConverter(integer) {
-  if (!integer) return '';
-  
-  const MILLE = 1000;
-  const CINQ_CENT = 500;
-  const CENT = 100;
-  const CINQUANTE = 50;
-  const DIX = 10;
-  const CINQ = 5;
-  const UN = 5;
+const app = {
+	baseNumber: 0,
+	romanNumber: [],
 
-  let number = integer;
-  let romanNumber = []
+	init: function (nb) {
+		app.baseNumber = nb;
+		app.romanNumber = [];
+	},
 
-  while (number > 0) {
-		//if (number - MILLE >= 0) {
-		//	romanNumber = [...romanNumber, 'M'];
-		//	number -= MILLE;
-		//}
-		//
-		//if (number - CINQ_CENT >= 0) {
-		//	romanNumber = [...romanNumber, 'D'];
-		//	number -= CINQ_CENT;
-		//}
-		//
-		//if (number - CENT >= 0) {
-		//	romanNumber = [...romanNumber, 'C'];
-		//	number -= CENT;
-		//}
-		//
-		//if (number - CINQUANTE >= 0) {
-		//	romanNumber = [...romanNumber, 'L'];
-		//	number -= CINQUANTE;
-		//}
-		//
-		//if (number - DIX >= 0) {
-		//	romanNumber = [...romanNumber, 'X'];
-		//	number -= DIX;
-		//}
-		//
-		//if (number - CINQ >= 0) {
-		//	romanNumber = [...romanNumber, 'V'];
-		//	number -= CINQ;
-		//}
+	convert: function (nb) {
+		if (!nb) return '';
+		app.init(nb);
 
-		if (number - UN >= 0) {
-			romanNumber = [...romanNumber, 'I'];
-			number -= UN;
+		for (let i = 0; i < nb; i++) {
+			app.decompose();
 		}
-	}
 
-  return romanNumber.join('');
-}
+		return app.romanNumber.join('');
+	},
 
-module.exports = romanConverter;
+	decompose: function () {
+		if (app.baseNumber >= 1000) {
+			app.romanNumber = [...app.romanNumber, 'M'];
+			app.baseNumber -= 1000;
+		} else if (app.baseNumber >= 900) {
+			app.romanNumber = [...app.romanNumber, 'CM'];
+			app.baseNumber -= 900;
+		} else if (app.baseNumber >= 500) {
+			app.romanNumber = [...app.romanNumber, 'D'];
+			app.baseNumber -= 500;
+		} else if (app.baseNumber >= 400) {
+			app.romanNumber = [...app.romanNumber, 'CD'];
+			app.baseNumber -= 400;
+		} else if (app.baseNumber >= 100) {
+			app.romanNumber = [...app.romanNumber, 'C'];
+			app.baseNumber -= 100;
+		} else if (app.baseNumber >= 90) {
+			app.romanNumber = [...app.romanNumber, 'XC'];
+			app.baseNumber -= 90;
+		} else if (app.baseNumber >= 50) {
+			app.romanNumber = [...app.romanNumber, 'L'];
+			app.baseNumber -= 50;
+		} else if (app.baseNumber >= 40) {
+			app.romanNumber = [...app.romanNumber, 'XL'];
+			app.baseNumber -= 40;
+		} else if (app.baseNumber >= 10) {
+			app.romanNumber = [...app.romanNumber, 'X'];
+			app.baseNumber -= 10;
+		} else if (app.baseNumber >= 9) {
+			app.romanNumber = [...app.romanNumber, 'IX'];
+			app.baseNumber -= 9;
+		} else if (app.baseNumber >= 5) {
+			app.romanNumber = [...app.romanNumber, 'V'];
+			app.baseNumber -= 5;
+		} else if (app.baseNumber >= 4) {
+			app.romanNumber = [...app.romanNumber, 'IV'];
+			app.baseNumber -= 4;
+		} else if (app.baseNumber >= 1) {
+			app.romanNumber = [...app.romanNumber, 'I'];
+			app.baseNumber -= 1;
+		}
+	},
+};
+
+module.exports = app;
