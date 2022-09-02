@@ -1,7 +1,5 @@
 const { convert } = require('../js/romanConverter');
 
-// const instance = new RomanConverter();
-
 describe('Roman Translator', () => {
 	it('should return a string', () => {
 		expect(typeof convert()).toEqual('string');
