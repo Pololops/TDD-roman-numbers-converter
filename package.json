@@ -1,26 +1,26 @@
 {
-  "name": "roman-numerals-translator",
-  "version": "1.0.0",
-  "description": "TDD development of a function that translates numbers into Roman numerals",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pololops/roman-numerals-translator.git"
-  },
-  "author": "Pololops",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Pololops/roman-numerals-translator/issues"
-  },
-  "homepage": "https://github.com/Pololops/roman-numerals-translator#readme",
-  "devDependencies": {
-    "eslint": "^8.23.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "jest": "^29.0.1"
-  }
+	"name": "roman-numerals-translator",
+	"version": "1.0.0",
+	"description": "TDD development of a function that translates numbers into Roman numerals",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pololops/roman-numerals-translator.git"
+	},
+	"author": "Pololops",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Pololops/roman-numerals-translator/issues"
+	},
+	"homepage": "https://github.com/Pololops/roman-numerals-translator#readme",
+	"devDependencies": {
+		"eslint": "^8.23.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"jest": "^29.0.1"
+	}
 }
