@@ -1,5 +1,5 @@
 {
-	"name": "roman-ou-greek-numerals-translator",
+	"name": "roman-or-greek-numerals-translator",
 	"version": "1.0.0",
 	"description": "TDD development of a function that translates numbers into Roman numerals",
 	"main": "index.js",
